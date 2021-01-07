@@ -5,7 +5,11 @@ import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+
 Vue.use(ElementUI);
+// window.axios = axios;可以不建议
+
+// Vue.prototype.axios = axios;
 Vue.config.productionTip = false
 
 new Vue({

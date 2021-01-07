@@ -25,19 +25,43 @@
         </el-table-column>
         <el-table-column
             align="center"
-            prop="date"
-            label="日期"
-            width="180">
+            prop="id"
+            label="id"
+            >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="name"
-            label="姓名"
-            width="180">
+            prop="supplierName"
+            label="运营商名称"
+            >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="address"
+            prop="supplierContact"
+            label="联系人"
+            >
+        </el-table-column>
+        <el-table-column
+            align="center"
+            prop="supplierPhone"
+            label="联系方式"
+            >
+        </el-table-column>
+        <el-table-column
+            align="center"
+            prop="supplierEmail"
+            label="联系邮箱"
+            >
+        </el-table-column>
+        <el-table-column
+            align="center"
+            prop="supplierBank"
+            label="开户行"
+            >
+        </el-table-column>
+        <el-table-column
+            align="center"
+            prop="supplierAddress"
             show-overflow-tooltip
             label="地址">
         </el-table-column>
