@@ -33,41 +33,28 @@
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierName"
-            label="运营商名称"
+            prop="brandName"
+            label="品牌名称"
             >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierContact"
-            label="联系人"
+            prop="brandDesc"
+            label="品牌描述"
             >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierPhone"
-            label="联系方式"
+            prop="brandSite"
+            label="品牌站点"
             >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierEmail"
-            label="联系邮箱"
+            prop="brandLogo"
+            label="品牌logo"
             >
         </el-table-column>
-        <el-table-column
-            align="center"
-            prop="supplierBank"
-            label="开户行"
-            >
-        </el-table-column>
-        <el-table-column
-            align="center"
-            prop="supplierAddress"
-            show-overflow-tooltip
-            label="地址">
-        </el-table-column>
-
         <el-table-column
             align="center"
             label="操作">
@@ -97,26 +84,17 @@
         :visible.sync="editDialog"
         width="40%">
       <el-form ref="form" label-width="100px" size="small">
-        <el-form-item label="运营商名称">
-          <el-input v-model="formData.supplierName"></el-input>
+        <el-form-item label="品牌名称">
+          <el-input v-model="formData.brandName"></el-input>
         </el-form-item>
-        <el-form-item label="联系人">
-          <el-input v-model="formData.supplierContact"></el-input>
+        <el-form-item label="品牌描述">
+          <el-input v-model="formData.brandDesc"></el-input>
         </el-form-item>
-        <el-form-item label="联系方式">
-          <el-input v-model="formData.supplierPhone"></el-input>
+        <el-form-item label="品牌站点">
+          <el-input v-model="formData.brandSite"></el-input>
         </el-form-item>
-        <el-form-item label="联系邮箱">
-          <el-input v-model="formData.supplierEmail"></el-input>
-        </el-form-item>
-        <el-form-item label="地址">
-          <el-input v-model="formData.supplierAddress"></el-input>
-        </el-form-item>
-        <el-form-item label="开户行">
-          <el-input v-model="formData.supplierBank"></el-input>
-        </el-form-item>
-        <el-form-item label="银行卡号">
-          <el-input v-model="formData.supplierBankCode"></el-input>
+        <el-form-item label="品牌logo">
+          <el-input v-model="formData.brandLogo"></el-input>
         </el-form-item>
       </el-form>
 

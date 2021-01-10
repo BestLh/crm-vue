@@ -18,54 +18,33 @@
           stripe
           tooltip-effect="dark"
           border
+          row-key="id"
           :data="tableData"
-          @selection-change="selectionChangeListenter"
+          :tree-props="{children: 'children'}"
           style="width: 100%">
         <el-table-column
-            type="selection"
-            width="55">
-        </el-table-column>
-        <el-table-column
-            align="center"
+
             prop="id"
             label="id"
             >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierName"
-            label="运营商名称"
+            prop="categoryName"
+            label="分类名称"
             >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierContact"
-            label="联系人"
+            prop="categoryDesc"
+            label="分类描述"
             >
         </el-table-column>
         <el-table-column
             align="center"
-            prop="supplierPhone"
-            label="联系方式"
+            prop="parentId"
+            label="父级ID"
             >
-        </el-table-column>
-        <el-table-column
-            align="center"
-            prop="supplierEmail"
-            label="联系邮箱"
-            >
-        </el-table-column>
-        <el-table-column
-            align="center"
-            prop="supplierBank"
-            label="开户行"
-            >
-        </el-table-column>
-        <el-table-column
-            align="center"
-            prop="supplierAddress"
-            show-overflow-tooltip
-            label="地址">
         </el-table-column>
 
         <el-table-column
@@ -79,16 +58,15 @@
         </el-table-column>
       </el-table>
     </div>
-
     <div class="page-box">
-      <el-pagination
-          background
-          layout="prev, pager, next"
-          :current-page="currentPage"
-          :page-size="pageSize"
-          @current-change="pageChange"
-          :total="total">
-      </el-pagination>
+<!--      <el-pagination-->
+<!--          background-->
+<!--          layout="prev, pager, next"-->
+<!--          :current-page="currentPage"-->
+<!--          :page-size="pageSize"-->
+<!--          @current-change="pageChange"-->
+<!--          :total="total">-->
+<!--      </el-pagination>-->
     </div>
 
     <!--新建或者编辑弹出框-->
@@ -97,26 +75,14 @@
         :visible.sync="editDialog"
         width="40%">
       <el-form ref="form" label-width="100px" size="small">
-        <el-form-item label="运营商名称">
-          <el-input v-model="formData.supplierName"></el-input>
+        <el-form-item label="分类名称">
+          <el-input v-model="formData.categoryName"></el-input>
         </el-form-item>
-        <el-form-item label="联系人">
-          <el-input v-model="formData.supplierContact"></el-input>
+        <el-form-item label="分类描述">
+          <el-input v-model="formData.categoryDesc"></el-input>
         </el-form-item>
-        <el-form-item label="联系方式">
-          <el-input v-model="formData.supplierPhone"></el-input>
-        </el-form-item>
-        <el-form-item label="联系邮箱">
-          <el-input v-model="formData.supplierEmail"></el-input>
-        </el-form-item>
-        <el-form-item label="地址">
-          <el-input v-model="formData.supplierAddress"></el-input>
-        </el-form-item>
-        <el-form-item label="开户行">
-          <el-input v-model="formData.supplierBank"></el-input>
-        </el-form-item>
-        <el-form-item label="银行卡号">
-          <el-input v-model="formData.supplierBankCode"></el-input>
+        <el-form-item label="父级id">
+          <el-input v-model="formData.parentId"></el-input>
         </el-form-item>
       </el-form>
 

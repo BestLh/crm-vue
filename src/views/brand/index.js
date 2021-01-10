@@ -1,4 +1,4 @@
-import supplier from "@/api/supplier";
+import brand from "@/api/brand";
 
 export default {
     name: "index",
@@ -20,7 +20,7 @@ export default {
     },
     methods: {
         async findAll() {
-            let response = await supplier.findAll(this.currentPage,this.pageSize);
+            let response = await brand.findAll(this.currentPage,this.pageSize);
             if (response.list.length != 0){
                 this.tableData = response.list;
                 this.total = response.total;
@@ -33,9 +33,9 @@ export default {
 
         async addOrEdit() {
             if (this.formData.id){
-                await supplier.updateEntity(this.formData);
+                await brand.updateEntity(this.formData);
             }else {
-                await supplier.addEntity(this.formData);
+                await brand.addEntity(this.formData);
             }
             this.findAll();
         },
@@ -46,7 +46,7 @@ export default {
         },
 
         async findById(id){
-            this.formData = await supplier.findById(id);
+            this.formData = await brand.findById(id);
         },
 
         selectionChangeListenter(selection){
@@ -60,7 +60,7 @@ export default {
                     message: '请选择后再删除'
                 })
             }else{
-                await supplier.deleteByIds(this.ids);
+                await brand.deleteByIds(this.ids);
                 this.findAll();
             }
         }
